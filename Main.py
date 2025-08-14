@@ -7,6 +7,7 @@ import time
 from fastapi.middleware.cors import CORSMiddleware
 import random
 from datetime import datetime, timedelta
+import os
 
 app = FastAPI()
 
@@ -21,7 +22,7 @@ app.add_middleware(
 cache = {}
 CACHE_EXPIRY = 60  # seconds
 
-NEWS_API_KEY = "acf6e7d949d14703964fed12d6762af6"  # Get from newsapi.org (free)
+NEWS_API_KEY = os.getenv("NEWS_API_KEY")  # Get from newsapi.org (free)
 
 
 def get_mock_data(symbol: str):

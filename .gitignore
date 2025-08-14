@@ -1,2 +1,3 @@
 menv
-_pycache_
+
+.env
